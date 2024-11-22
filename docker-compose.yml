@@ -10,4 +10,4 @@ services:
       DASH_DEBUG_MODE: "true"
     volumes:
       - .:/app # Mount the current directory into the container for development
-    command: gunicorn spacex_dash_app:server --workers=1 --threads=2 --bind=0.0.0.0:8050
+    command: gunicorn app:server --workers=1 --threads=2 --bind=0.0.0.0:8050
