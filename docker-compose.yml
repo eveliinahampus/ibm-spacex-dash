@@ -1,0 +1,13 @@
+services:
+  dash-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8050:8050" # Map container's port 8050 to host's port 8050
+    environment:
+      # Set environment variables if needed
+      DASH_DEBUG_MODE: "true"
+    volumes:
+      - .:/app # Mount the current directory into the container for development
+    command: gunicorn spacex_dash_app:server --workers=1 --threads=2 --bind=0.0.0.0:8050
