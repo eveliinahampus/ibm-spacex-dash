@@ -99,6 +99,6 @@ def update_scatter_chart(selected_site, payload_range):
     return fig
 
 
-# Run the app
+# Run the app, deploy
 if __name__ == '__main__':
     app.run_server(host='0.0.0.0', port=8050)
